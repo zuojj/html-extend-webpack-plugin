@@ -61,11 +61,6 @@ HtmlExtendWebpackPlugin.prototype.apply = function(compiler) {
                 callback();
 
                 // 对所有子模块(img, css, js)进行编译， 生成compilationResult;
-                // { hash: 'c523b7168cc0fa06c5cea2628deee602',
-                //   outputName: 'ksmap02.html',
-                //   content: 'var HTML_WEBPACK_PLUGIN_RESULT =\n/******/ (function(modules) { // webpackBootstrap\n/******/ \t// The module cache\n/******/ \tvar installedModules = {};\n\n/******/ \t// The require function\n/******/ \tfunction __webpack_require__(moduleId) {\n\n/******/ \t\t// Check if module is in cache\n/******/ \t\tif(installedModules[moduleId])\n/******/ \t\t\treturn installedModules[moduleId].exports;\n\n/******/ \t\t// Create a new module (and put it into the cache)\n/******/ \t\tvar module = installedModules[moduleId] = {\n/******/ \t\t\texports: {},\n/******/ \t\t\tid: moduleId,\n/******/ \t\t\tloaded: false\n/******/ \t\t};\n\n/******/ \t\t// Execute the module function\n/******/ \t\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n\n/******/ \t\t// Flag the module as loaded\n/******/ \t\tmodule.loaded = true;\n\n/******/ \t\t// Return the exports of the module\n/******/ \t\treturn module.exports;\n/******/ \t}\n\n\n/******/ \t// expose the modules object (__webpack_modules__)\n/******/ \t__webpack_require__.m = modules;\n\n/******/ \t// expose the module cache\n/******/ \t__webpack_require__.c = installedModules;\n\n/******/ \t// __webpack_public_path__\n/******/ \t__webpack_require__.p = "";\n\n/******/ \t// Load entry module and return exports\n/******/ \treturn __webpack_require__(0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ function(module, exports, __webpack_require__) {\n\n\tmodule.exports = "<!DOCTYPE html>\\r\\n<html>\\r\\n\\r\\n<head>\\r\\n    <meta charset=\\"utf-8\\">\\r\\n    <meta http-equiv=\\"X-UA-Compatible\\" content=\\"IE=edge,chrome=1\\">\\r\\n    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\\">\\r\\n    <title>Examples</title>\\r\\n    <meta name=\\"description\\" content=\\"\\">\\r\\n    <meta name=\\"keywords\\" content=\\"\\">\\r\\n    <style type=\\"text/css\\">\\r\\n    .container {\\r\\n        width: 800px;\\r\\n        height: 400px;\\r\\n        margin: 0 auto;\\r\\n    }\\r\\n    </style>\\r\\n</head>\\r\\n\\r\\n<body>\\r\\n    <div class=\\"container\\">\\r\\n        <div class=\\"sd-slider\\">\\r\\n            <div class=\\"sd-slider-item\\">\\r\\n                <a href=\\"#\\">\\r\\n                    <img src=\\"" + __webpack_require__(1) + "\\" />\\r\\n                    <div class=\\"text\\">\\r\\n                        <p>上海老伯00年只做葱油饼 美味惊动BBC</p>\\r\\n                    </div>\\r\\n                </a>\\r\\n            </div>\\r\\n            <div class=\\"sd-slider-item\\">\\r\\n                <a href=\\"#\\">\\r\\n                    <img src=\\"" + __webpack_require__(2) + "\\">\\r\\n                    <div class=\\"text\\">\\r\\n                        <p>上海老伯01年只做葱油饼 美味惊动BBC</p>\\r\\n                    </div>\\r\\n                </a>\\r\\n            </div>\\r\\n            <div class=\\"sd-slider-item\\">\\r\\n                <a href=\\"#\\">\\r\\n                    <img src=\\"" + __webpack_require__(3) + "\\">\\r\\n                    <div class=\\"text\\">\\r\\n                        <p>上海老伯02年只做葱油饼 美味惊动BBC</p>\\r\\n                    </div>\\r\\n                </a>\\r\\n            </div>\\r\\n            <div class=\\"sd-slider-item\\">\\r\\n                <a href=\\"#\\">\\r\\n                    <img src=\\"" + __webpack_require__(4) + "\\" />\\r\\n                    <div class=\\"text\\">\\r\\n                        <p>上海老伯03年只做葱油饼 美味惊动BBC</p>\\r\\n                    </div>\\r\\n                </a>\\r\\n            </div>\\r\\n        </div>\\r\\n    </div>\\r\\n</body>\\r\\n\\r\\n</html>\\r\\n";\n\n/***/ },\n/* 1 */\n/***/ function(module, exports, __webpack_require__) {\n\n\tmodule.exports = __webpack_require__.p + "/static/images/1.jpg";\n\n/***/ },\n/* 2 */\n/***/ function(module, exports, __webpack_require__) {\n\n\tmodule.exports = __webpack_require__.p + "/static/images/2.jpg";\n\n/***/ },\n/* 3 */\n/***/ function(module, exports, __webpack_require__) {\n\n\tmodule.exports = __webpack_require__.p + "/static/images/3.jpg";\n\n/***/ },\n/* 4 */\n/***/ function(module, exports, __webpack_require__) {\n\n\tmodule.exports = __webpack_require__.p + "/static/images/4.jpg";\n\n/***/ }\n/******/ ]);'
-                // }
-
                 return compilationResult.content;
             });
     });
@@ -74,33 +69,6 @@ HtmlExtendWebpackPlugin.prototype.apply = function(compiler) {
         var applyPluginsAsyncWaterfall = self.applyPluginsAsyncWaterfall(compilation);
 
         // Get all chunks
-        /*[{
-            id: 0,
-            rendered: true,
-            initial: true,
-            entry: false,
-            extraAsync: false,
-            size: 328,
-            names: ['ksmap01'],
-            files: ['static/js/ksmap01.js', 'static/css/ksmap01.css'],
-            hash: '489264836710868eddc6',
-            parents: [4],
-            origins: [
-                [Object]
-            ]
-        }, {
-            id: 4,
-            rendered: true,
-            initial: true,
-            entry: true,
-            extraAsync: false,
-            size: 41,
-            names: ['common'],
-            files: ['static/js/common.js', 'static/css/common.css'],
-            hash: 'f251edd69a985b7c388b',
-            parents: [],
-            origins: []
-        }]*/
         var chunks = self.filterChunks(compilation.getStats().toJson(), self.options.chunks, self.options.excludeChunks);
 
         // Sort chunks
@@ -109,36 +77,6 @@ HtmlExtendWebpackPlugin.prototype.apply = function(compiler) {
         chunks = compilation.applyPluginsWaterfall('html-webpack-plugin-alter-chunks', chunks, {
             plugin: self
         });
-
-        // sort after
-        /*[{
-            id: 4,
-            rendered: true,
-            initial: true,
-            entry: true,
-            extraAsync: false,
-            size: 41,
-            names: ['common'],
-            files: ['static/js/common.js', 'static/css/common.css'],
-            hash: 'f251edd69a985b7c388b',
-            parents: [],
-            origins: []
-        }, {
-            id: 0,
-            rendered: true,
-            initial: true,
-            entry: false,
-            extraAsync: false,
-            size: 328,
-            names: ['ksmap01'],
-            files: ['static/js/ksmap01.js', 'static/css/ksmap01.css'],
-            hash: '489264836710868eddc6',
-            parents: [4],
-            origins: [
-                [Object]
-            ]
-        }]*/
-
 
         // Get assets
         var assets = self.HtmlExtendWebpackPluginAssets(compilation, chunks);
@@ -220,7 +158,7 @@ HtmlExtendWebpackPlugin.prototype.apply = function(compiler) {
                 var assets = result.assets;
                 var chunks = result.chunks;
                 // Prepare script and link tags
-                var assetTags = self.generateAssetTags(assets);
+                var assetTags = self.generateAssetTags(assets, compilation);
                 var pluginArgs = {
                     head: assetTags.head,
                     body: assetTags.body,
@@ -231,49 +169,6 @@ HtmlExtendWebpackPlugin.prototype.apply = function(compiler) {
                 // Allow plugins to change the assetTag definitions
                 return applyPluginsAsyncWaterfall('html-webpack-plugin-alter-asset-tags', true, pluginArgs)
                     .then(function(result) {
-                        /*{
-                            head: [{
-                                tagName: 'link',
-                                selfClosingTag: false,
-                                attributes: { href: 'static/css/common.css', rel: 'stylesheet' }
-                            }, {
-                                tagName: 'link',
-                                selfClosingTag: false,
-                                attributes: { href: 'static/css/ksmap01.css', rel: 'stylesheet' }
-                            }],
-                            body: [{
-                                tagName: 'script',
-                                closeTag: true,
-                                attributes: { type: 'text/javascript', src: 'static/js/common.js' }
-                            }, {
-                                tagName: 'script',
-                                closeTag: true,
-                                attributes: { type: 'text/javascript', src: 'static/js/ksmap01.js' }
-                            }],
-                            plugin: HtmlExtendWebpackPlugin {
-                                options: {
-                                    template: '/Users/zuojunjun/workspace/vr-webpack-workspace/node_modules/html-webpack-plugin/lib/loader.js!/Users/zuojunjun/workspace/vr-webpack-workspace/src/jzwd/ksmap01/ksmap01.html',
-                                    filename: 'ksmap01.html',
-                                    hash: false,
-                                    inject: true,
-                                    compile: true,
-                                    favicon: false,
-                                    minify: false,
-                                    cache: true,
-                                    showErrors: true,
-                                    chunks: [Object],
-                                    excludeChunks: [],
-                                    title: 'Webpack App',
-                                    xhtml: false
-                                },
-                                childCompilerHash: '04698312ffee4f94353dbc05723fb59c',
-                                childCompilationOutputName: 'ksmap01.html',
-                                assetJson: '["static/css/common.css","static/css/ksmap01.css","static/js/common.js","static/js/ksmap01.js"]'
-                            },
-                            chunks: undefined,
-                            outputName: 'ksmap01.html'
-                        }*/
-                        // !!!!!
                         // Add the stylesheets, scripts and so on to the resulting html
                         return self.postProcessHtml(html, assets, {
                                 body: result.body,
@@ -499,13 +394,7 @@ HtmlExtendWebpackPlugin.prototype.filterChunks = function(webpackStatsJson, incl
             return false;
         }
         // Skip if the chunks should be filtered and the given chunk was not added explicity
-/*        if (Array.isArray(includedChunks) && includedChunks.indexOf(chunkName) === -1) {
-            return false;
-        }*/
-
-        if(includedChunks && 'object' === typeof includedChunks && includedChunks[chunkName]) {
-            chunk.chunkExtend = includedChunks[chunkName];
-        }else {
+        if (Array.isArray(includedChunks) && includedChunks.indexOf(chunkName) === -1) {
             return false;
         }
 
@@ -561,40 +450,23 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
         assets.manifest = self.appendHash(assets.manifest, webpackStatsJson.hash);
         assets.favicon = self.appendHash(assets.favicon, webpackStatsJson.hash);
     }
-    /* chunks
-    [{
-        id: 4,
-        rendered: true,
-        initial: true,
-        entry: true,
-        extraAsync: false,
-        size: 41,
-        names: ['common'],
-        files: ['static/js/common.js', 'static/css/common.css'],
-        hash: 'f251edd69a985b7c388b',
-        parents: [],
-        origins: []
-    }, {
-        id: 0,
-        rendered: true,
-        initial: true,
-        entry: false,
-        extraAsync: false,
-        size: 328,
-        names: ['ksmap01'],
-        files: ['static/js/ksmap01.js', 'static/css/ksmap01.css'],
-        hash: '489264836710868eddc6',
-        parents: [4],
-        origins: [
-            [Object]
-        ]
-    }]*/
+
+    var chunksExtend = this.options.chunksExtend;
 
     for (var i = 0; i < chunks.length; i++) {
         var chunk = chunks[i];
         var chunkName = chunk.names[0];
 
-        assets.chunks[chunkName] = chunk.chunkExtend || {};
+        var chunkObj = assets.chunks[chunkName] = chunksExtend[chunkName] || {
+            stylesheet: {
+                inline: false,
+                attrs: {}
+            },
+            script: {
+                inline: false,
+                attrs: {}
+            }
+        };
 
         // Prepend the public path to all chunk files
         var chunkFiles = [].concat(chunk.files).map(function(chunkFile) {
@@ -611,10 +483,18 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
         // Webpack outputs an array for each chunk when using sourcemaps
         // But we need only the entry file
         var entry = chunkFiles[0];
-        assets.chunks[chunkName].size = chunk.size;
-        assets.chunks[chunkName].entry = entry;
-        assets.chunks[chunkName].hash = chunk.hash;
-        assets.js.push(entry);
+
+        chunkObj.size = chunk.size;
+        chunkObj.entry = entry;
+        chunkObj.hash = chunk.hash;
+
+        assets.js.push({
+            size: chunk.size,
+            hash: chunk.hash,
+            src: entry,
+            inline: chunkObj.script.inline,
+            attrs: chunkObj.script.attrs
+        });
 
         // Gather all css files
         var css = chunkFiles.filter(function(chunkFile) {
@@ -624,88 +504,72 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
         });
 
         // [ 'static/css/common.css' ]
-        assets.chunks[chunkName].css = css;
-        assets.css = assets.css.concat(css);
+        chunkObj.css = css;
+
+        css.forEach(function(item, index) {
+            var flag = true;
+
+            // Duplicate css assets can occur on occasion if more than one chunk
+            // requires the same css.
+            assets.css.forEach(function(obj) {
+                if (obj.href === item) {
+                    flag = false;
+                }
+            });
+
+            if (!flag) return;
+
+            assets.css.push({
+                size: chunk.size,
+                hash: chunk.hash,
+                href: item,
+                inline: chunkObj.stylesheet.inline,
+                attrs: chunkObj.stylesheet.attrs
+            });
+        });
     }
-
-    // Duplicate css assets can occur on occasion if more than one chunk
-    // requires the same css.
-    assets.css = _.uniq(assets.css);
-
-    /*{
-        publicPath: '',
-        chunks: {
-            common: {
-                size: 41,
-                entry: 'static/js/common.js',
-                hash: 'f251edd69a985b7c388b',
-                css: [Object]
-            },
-            ksmap01: {
-                size: 328,
-                entry: 'static/js/ksmap01.js',
-                hash: '489264836710868eddc6',
-                css: [Object]
-            }
-        },
-        js: ['static/js/common.js', 'static/js/ksmap01.js'],
-        css: ['static/css/common.css', 'static/css/ksmap01.css'],
-        manifest: undefined
-    }*/
-
     return assets;
 };
 
 /**
  * Injects the assets into the given html string
  */
-HtmlExtendWebpackPlugin.prototype.generateAssetTags = function(assets) {
-    var chunks = assets.chunks;
-    var _filter  = function(path) {
-        for(let key in chunks) {
-            console.log(chunks[key], path);
-            return chunks[key]['entry'] === path ? chunks[key] : null;
-        }
-    }
-
+HtmlExtendWebpackPlugin.prototype.generateAssetTags = function(assets, compilation) {
     // Turn script files into script tags
-    var scripts = assets.js.map(function(scriptPath) {
-        var chunk = _filter(scriptPath),
-            script = chunk.script;
+    var scripts = assets.js.map(function(scriptObj) {
+        !scriptObj.inline && (scriptObj.attrs.src = scriptObj.src);
 
-        if(script.inline) {
-            return {
-                tagName: 'script',
-                closeTag: true,
-                attributes: {
-
-                }
-            };
-        }else {
-            return {
-                tagName: 'script',
-                closeTag: true,
-                attributes: {
-                    type: 'text/javascript',
-                    src: scriptPath
-                }
-            };
-        }
-
+        return _.merge({
+            tagName: 'script',
+            closeTag: true
+        }, {
+            innerHTML: scriptObj.inline ? compilation.assets[scriptObj.src].source() : '',
+            attributes: scriptObj.attrs
+        });
     });
+
     // Make tags self-closing in case of xhtml
     var selfClosingTag = !!this.options.xhtml;
     // Turn css files into link tags
-    var styles = assets.css.map(function(stylePath) {
-        return {
+    var styles = assets.css.map(function(styleObj) {
+        return styleObj.inline ? {
+            tagName: 'style',
+            closeTag: true,
+            innerHTML: compilation.assets[styleObj.href].source(),
+            attributes: {
+                type: 'text/css'
+            }
+        } : {
             tagName: 'link',
             selfClosingTag: selfClosingTag,
             attributes: {
-                href: stylePath,
-                rel: 'stylesheet'
+                type: 'text/css',
+                rel: 'stylesheet',
+                href: styleObj.href
             }
         };
     });
+
     // Injection targets
     var head = [];
     var body = [];
@@ -742,51 +606,26 @@ HtmlExtendWebpackPlugin.prototype.injectAssetsIntoHtml = function(html, assets, 
     var htmlRegExp = /(<html[^>]*>)/i;
     var headRegExp = /(<\/head>)/i;
     var bodyRegExp = /(<\/body>)/i;
-    var body = assetTags.body.map(this.createHtmlTag).join('');
-    var head = assetTags.head.map(this.createHtmlTag).join('');
+    var cssReplace = 'CSS_PLACEHOLDER';
+    var jsReplace  = 'JS_PLACEHOLDER';
+    var body = assetTags.body.map(this.createHtmlTag).join('\n');
+    var head = assetTags.head.map(this.createHtmlTag).join('\n');
 
-console.log(html);
     if(headRegExp.test(html)) {
         html = html.replace(headRegExp, head + '</head>');
-    }else {
-        html = head + html;
+    } else if(html.indexOf(cssReplace) > 0) {
+        html = html.replace(cssReplace, head);
+    } else {
+        html = head + '\n' + html;
     }
 
-    if(bodyRegExp.test(html)) {
+    if (bodyRegExp.test(html)) {
         html = html.replace(bodyRegExp, body + '</body>');
-    }else {
-        html += body;
+    }else if(html.indexOf(jsReplace) > 0) {
+        html = html.replace(jsReplace, body);
+    } else {
+        html += '\n' + body;
     }
-
-    // if (body.length) {
-    //     if (bodyRegExp.test(html)) {
-    //         // Append assets to body element
-    //         html = html.replace(bodyRegExp, function(match) {
-    //             return body.join('') + match;
-    //         });
-    //     } else {
-    //         // Append scripts to the end of the file if no <body> element exists:
-    //         html += body.join('');
-    //     }
-    // }
-
-    // if (head.length) {
-    //     // Create a head tag if none exists
-    //     if (!headRegExp.test(html)) {
-    //         if (!htmlRegExp.test(html)) {
-    //             html = '<head></head>' + html;
-    //         } else {
-    //             html = html.replace(htmlRegExp, function(match) {
-    //                 return match + '<head></head>';
-    //             });
-    //         }
-    //     }
-
-    //     // Append assets to head element
-    //     html = html.replace(headRegExp, function(match) {
-    //         return head.join('') + match;
-    //     });
-    // }
 
     // Inject manifest into the opening html tag
     if (assets.manifest) {
@@ -798,8 +637,6 @@ console.log(html);
             return start + ' manifest="' + assets.manifest + '"' + end;
         });
     }
-
-    console.log(html);
     return html;
 };
 
@@ -821,7 +658,7 @@ HtmlExtendWebpackPlugin.prototype.createHtmlTag = function(tagDefinition) {
         return attributeName + '="' + tagDefinition.attributes[attributeName] + '"';
     });
     return '<' + [tagDefinition.tagName].concat(attributes).join(' ') + (tagDefinition.selfClosingTag ? '/' : '') + '>' +
-        (tagDefinition.innerHTML || '') +
+        (tagDefinition.innerHTML ? ('\n' + tagDefinition.innerHTML + '\n') : '') +
         (tagDefinition.closeTag ? '</' + tagDefinition.tagName + '>' : '');
 };
 
