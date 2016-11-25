@@ -1,4 +1,5 @@
 # html-extend-webpack-plugin
+
 Extended from [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin), support stylesheet and script file inline to html and tag add attributes
 
 

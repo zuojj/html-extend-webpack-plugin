@@ -2,5 +2,5 @@ Change History
 ==============
 
 
-## v2.24.1
-Extended from html-webpack-plugin
+## 1.0.1
+Extended from html-webpack-plugin v2.24.1

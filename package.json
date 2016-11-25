@@ -1,6 +1,6 @@
 {
   "name": "html-extend-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extended from [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin), support stylesheet and script file inline to html and tag add attributes",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,11 @@
     "url": "git+https://github.com/zuojj/html-extend-webpack-plugin.git"
   },
   "keywords": [
-    "html"
+    "html-webpack-plugin",
+    "html-extend-webpack-plugin",
+    "extend"
   ],
-  "author": "",
+  "author": "zuojj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zuojj/html-extend-webpack-plugin/issues"
@@ -27,7 +29,6 @@
     "pretty-error": "^2.0.2",
     "toposort": "^1.0.0"
   },
-  "description": "Support stylesheet and script file inline to html and tag add attributes",
   "devDependencies": {
     "appcache-webpack-plugin": "^1.3.0",
     "css-loader": "^0.25.0",
