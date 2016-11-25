@@ -457,7 +457,7 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
         var chunk = chunks[i];
         var chunkName = chunk.names[0];
 
-        var chunkObj = assets.chunks[chunkName] = chunksExtend[chunkName] || {
+        var chunkObj = assets.chunks[chunkName] = _.merge({
             stylesheet: {
                 inline: false,
                 attrs: {}
@@ -466,7 +466,7 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
                 inline: false,
                 attrs: {}
             }
-        };
+        }, chunksExtend[chunkName]);
 
         // Prepend the public path to all chunk files
         var chunkFiles = [].concat(chunk.files).map(function(chunkFile) {
@@ -556,17 +556,17 @@ HtmlExtendWebpackPlugin.prototype.generateAssetTags = function(assets, compilati
             tagName: 'style',
             closeTag: true,
             innerHTML: compilation.assets[styleObj.href].source(),
-            attributes: {
+            attributes: _.merge({
                 type: 'text/css'
-            }
+            }, styleObj.attrs)
         } : {
             tagName: 'link',
             selfClosingTag: selfClosingTag,
-            attributes: {
+            attributes: _.merge({
                 type: 'text/css',
                 rel: 'stylesheet',
                 href: styleObj.href
-            }
+            }, styleObj.attrs)
         };
     });
 
