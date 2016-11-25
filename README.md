@@ -32,6 +32,7 @@ Here's an example webpack config illustrating how to use these options:
 ```javascript
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const HtmlExtendWebpackPlugin = require('html-extend-webpack-plugin');
+
 module.exports = {
     plugins: [
         new CommonsChunkPlugin({
@@ -68,7 +69,7 @@ module.exports = {
 
 
 You can also add stylesheet placehodler and javascript placehoder to your template as follows:
-```
+```html
 <div class="container">
 *CSS_PLACEHOLDER*
     <label>时间段：</label>
