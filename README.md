@@ -72,12 +72,12 @@ module.exports = {
 You can also add stylesheet placehodler and javascript placehoder to your template as follows:
 ```html
 <div class="container">
-*CSS_PLACEHOLDER*
+CSS_PLACEHOLDER
     <label>时间段：</label>
     <input type="text" id="date_start">
     <span style="margin: 0 10px">-</span>
     <input type="text" id="date_end">
-*JS_PLACEHOLDER*
+JS_PLACEHOLDER
 </div>
 ```
 
