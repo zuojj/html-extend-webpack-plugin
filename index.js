@@ -604,25 +604,25 @@ HtmlExtendWebpackPlugin.prototype.generateAssetTags = function(assets, compilati
  */
 HtmlExtendWebpackPlugin.prototype.injectAssetsIntoHtml = function(html, assets, assetTags) {
     var htmlRegExp = /(<html[^>]*>)/i;
-    var headRegExp = /(<\/head>)/i;
-    var bodyRegExp = /(<\/body>)/i;
+    var headRegExp = /<\/head>/i;
+    var bodyRegExp = /<\/body>/i;
     var cssReplace = 'CSS_PLACEHOLDER';
     var jsReplace  = 'JS_PLACEHOLDER';
     var body = assetTags.body.map(this.createHtmlTag).join('\n');
     var head = assetTags.head.map(this.createHtmlTag).join('\n');
 
-    if(headRegExp.test(html)) {
-        html = html.replace(headRegExp, head + '</head>');
-    } else if(html.indexOf(cssReplace) > 0) {
+    if(html.indexOf(cssReplace) > 0) {
         html = html.replace(cssReplace, head);
+    } else if(headRegExp.test(html)) {
+        html = html.replace(headRegExp, head + '</head>');
     } else {
         html = head + '\n' + html;
     }
 
-    if (bodyRegExp.test(html)) {
-        html = html.replace(bodyRegExp, body + '</body>');
-    }else if(html.indexOf(jsReplace) > 0) {
+    if(html.indexOf(jsReplace) > 0) {
         html = html.replace(jsReplace, body);
+    }else if (bodyRegExp.test(html)) {
+        html = html.replace(bodyRegExp, body + '</body>');
     } else {
         html += '\n' + body;
     }

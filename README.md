@@ -139,6 +139,6 @@ The result after compile it:
     });
     </script>
 </div>
-
 ```
-
+The inline stylesheet priority: CSS_PLACEHOLDER > `</head>` > no `</head>`
+The inline script priority: JS_PLACEHOLDER > `</body>` > no `</body>`

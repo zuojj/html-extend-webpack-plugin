@@ -1,6 +1,6 @@
 {
   "name": "html-extend-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Extended from [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin), support stylesheet and script file inline to html and tag add attributes",
   "main": "index.js",
   "scripts": {
