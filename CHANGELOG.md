@@ -1,6 +1,9 @@
 Change History
 ==============
 
+## 1.0.4
+bug fixed
+
 ## 1.0.3
 fixed inline styleshhet and script priority.
 

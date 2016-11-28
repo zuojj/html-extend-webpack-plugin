@@ -451,7 +451,8 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
         assets.favicon = self.appendHash(assets.favicon, webpackStatsJson.hash);
     }
 
-    var chunksExtend = this.options.chunksExtend;
+
+    var chunksExtend = this.options.chunksExtend || {};
 
     for (var i = 0; i < chunks.length; i++) {
         var chunk = chunks[i];
@@ -466,7 +467,7 @@ HtmlExtendWebpackPlugin.prototype.HtmlExtendWebpackPluginAssets = function(compi
                 inline: false,
                 attrs: {}
             }
-        }, chunksExtend[chunkName]);
+        }, chunksExtend[chunkName] || {});
 
         // Prepend the public path to all chunk files
         var chunkFiles = [].concat(chunk.files).map(function(chunkFile) {
