@@ -155,6 +155,7 @@ HtmlExtendWebpackPlugin.prototype.apply = function(compiler) {
             })
             .then(function(result) {
                 var html = result.html;
+
                 var assets = result.assets;
                 var chunks = result.chunks;
                 // Prepare script and link tags
@@ -609,15 +610,15 @@ HtmlExtendWebpackPlugin.prototype.injectAssetsIntoHtml = function(html, assets, 
     var bodyRegExp = /<\/body>/i;
     var cssReplace = 'CSS_PLACEHOLDER';
     var jsReplace  = 'JS_PLACEHOLDER';
-    var body = assetTags.body.map(this.createHtmlTag).join('\n');
-    var head = assetTags.head.map(this.createHtmlTag).join('\n');
+    var body = assetTags.body.map(this.createHtmlTag).join('');
+    var head = assetTags.head.map(this.createHtmlTag).join('');
 
     if(html.indexOf(cssReplace) > 0) {
         html = html.replace(cssReplace, head);
     } else if(headRegExp.test(html)) {
         html = html.replace(headRegExp, head + '</head>');
     } else {
-        html = head + '\n' + html;
+        html = head + html;
     }
 
     if(html.indexOf(jsReplace) > 0) {
@@ -625,7 +626,7 @@ HtmlExtendWebpackPlugin.prototype.injectAssetsIntoHtml = function(html, assets, 
     }else if (bodyRegExp.test(html)) {
         html = html.replace(bodyRegExp, body + '</body>');
     } else {
-        html += '\n' + body;
+        html += body;
     }
 
     // Inject manifest into the opening html tag
@@ -659,7 +660,7 @@ HtmlExtendWebpackPlugin.prototype.createHtmlTag = function(tagDefinition) {
         return attributeName + '="' + tagDefinition.attributes[attributeName] + '"';
     });
     return '<' + [tagDefinition.tagName].concat(attributes).join(' ') + (tagDefinition.selfClosingTag ? '/' : '') + '>' +
-        (tagDefinition.innerHTML ? ('\n' + tagDefinition.innerHTML + '\n') : '') +
+        (tagDefinition.innerHTML ? tagDefinition.innerHTML : '') +
         (tagDefinition.closeTag ? '</' + tagDefinition.tagName + '>' : '');
 };
 
